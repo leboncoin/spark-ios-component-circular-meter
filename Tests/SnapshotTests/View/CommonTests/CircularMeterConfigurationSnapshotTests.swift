@@ -1,23 +1,23 @@
 //
-//  ___COMPONENT_NAME___ConfigurationSnapshotTests.swift
-//  SparkComponent___COMPONENT_NAME___SnapshotTests
+//  CircularMeterConfigurationSnapshotTests.swift
+//  SparkComponentCircularMeterSnapshotTests
 //
-//  Created by ___USERNAME___ on ___CURRENT_DATE___.
-//  Copyright © ___CURRENT_YEAR___ Leboncoin. All rights reserved.
+//  Created by robin.lemaire on 27/05/2026.
+//  Copyright © 2026 Leboncoin. All rights reserved.
 //
 
 import UIKit
-@testable import SparkComponent___COMPONENT_NAME___
+@testable import SparkComponentCircularMeter
 @_spi(SI_SPI) import SparkCommon
 @_spi(SI_SPI) import SparkCommonSnapshotTesting
 
-struct ___COMPONENT_NAME___ConfigurationSnapshotTests {
+struct CircularMeterConfigurationSnapshotTests {
 
     // MARK: - Properties
 
-    let scenario: ___COMPONENT_NAME___ScenarioSnapshotTests
+    let scenario: CircularMeterScenarioSnapshotTests
 
-    var intent: ___COMPONENT_NAME___Intent = .default
+    var intent: CircularMeterIntent = .default
     // TODO: Add Others
 
     var modes: [ComponentSnapshotTestMode] = ComponentSnapshotTestConstants.Modes.default
@@ -40,7 +40,7 @@ struct ___COMPONENT_NAME___ConfigurationSnapshotTests {
 
     var testName: String {
         return if let documentationName {
-            "___component_name____" + documentationName
+            "circularmeter_" + documentationName
         } else {
             self.scenario.rawValue
         }

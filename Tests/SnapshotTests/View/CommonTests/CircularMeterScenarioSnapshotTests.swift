@@ -1,12 +1,12 @@
 //
-//  ___COMPONENT_NAME___ScenarioSnapshotTests.swift
-//  SparkComponent___COMPONENT_NAME___SnapshotTests
+//  CircularMeterScenarioSnapshotTests.swift
+//  SparkComponentCircularMeterSnapshotTests
 //
-//  Created by ___USERNAME___ on ___CURRENT_DATE___.
-//  Copyright © ___CURRENT_YEAR___ Leboncoin. All rights reserved.
+//  Created by robin.lemaire on 27/05/2026.
+//  Copyright © 2026 Leboncoin. All rights reserved.
 //
 
-@testable import SparkComponent___COMPONENT_NAME___
+@testable import SparkComponentCircularMeter
 @_spi(SI_SPI) import SparkCommon
 @_spi(SI_SPI) import SparkCommonSnapshotTesting
 @_spi(SI_SPI) import SparkCommonTesting
@@ -14,7 +14,7 @@ import SparkTheme
 import UIKit
 import SwiftUI
 
-enum ___COMPONENT_NAME___ScenarioSnapshotTests: String, CaseIterable {
+enum CircularMeterScenarioSnapshotTests: String, CaseIterable {
     case test1
     // TODO: Add others
     case documentation
@@ -31,7 +31,7 @@ enum ___COMPONENT_NAME___ScenarioSnapshotTests: String, CaseIterable {
 
     // MARK: - Configurations
 
-    func configuration() -> [___COMPONENT_NAME___ConfigurationSnapshotTests] {
+    func configuration() -> [CircularMeterConfigurationSnapshotTests] {
         switch self {
         case .test1:
             return self.test1()
@@ -55,8 +55,8 @@ enum ___COMPONENT_NAME___ScenarioSnapshotTests: String, CaseIterable {
     ///  - isBorder: default
     ///  - mode: all
     ///  - size: default
-    private func test1() -> [___COMPONENT_NAME___ConfigurationSnapshotTests] {
-        let intents = ___COMPONENT_NAME___Intent.allCases
+    private func test1() -> [CircularMeterConfigurationSnapshotTests] {
+        let intents = CircularMeterIntent.allCases
 
         return intents.map { intent in
                 .init(
@@ -70,8 +70,8 @@ enum ___COMPONENT_NAME___ScenarioSnapshotTests: String, CaseIterable {
     // MARK: - Documentation
 
     // Used to generate screenshot for Documentation
-    private func documentation() -> [___COMPONENT_NAME___ConfigurationSnapshotTests] {
-        var items: [___COMPONENT_NAME___ConfigurationSnapshotTests] = []
+    private func documentation() -> [CircularMeterConfigurationSnapshotTests] {
+        var items: [CircularMeterConfigurationSnapshotTests] = []
 
         // TODO: Add
 

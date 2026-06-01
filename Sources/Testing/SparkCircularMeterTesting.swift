@@ -1,9 +1,9 @@
 //
-//  ___COMPONENT_NAME___Testing.swift
-//  SparkComponent___COMPONENT_NAME___
+//  CircularMeterTesting.swift
+//  SparkComponentCircularMeter
 //
-//  Created by ___USERNAME___ on ___CURRENT_DATE___.
-//  Copyright © ___CURRENT_YEAR___ Leboncoin. All rights reserved.
+//  Created by robin.lemaire on 27/05/2026.
+//  Copyright © 2026 Leboncoin. All rights reserved.
 //
 
 import Foundation

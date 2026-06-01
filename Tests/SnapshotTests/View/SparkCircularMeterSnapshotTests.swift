@@ -1,22 +1,23 @@
 //
-//  Spark___COMPONENT_NAME___SnapshotTests.swift
-//  SparkComponent___COMPONENT_NAME___SnapshotTests
+//  SparkCircularMeterSnapshotTests.swift
+//  SparkComponentCircularMeterSnapshotTests
 //
-//  Created by ___USERNAME___ on ___CURRENT_DATE___.
-//  Copyright © ___CURRENT_YEAR___ Leboncoin. All rights reserved.
+//  Created by robin.lemaire on 27/05/2026.
+//  Copyright © 2026 Leboncoin. All rights reserved.
 //
 
+/*
 import XCTest
 import SwiftUI
 import SnapshotTesting
 @_spi(SI_SPI) import SparkCommon
 @_spi(SI_SPI) import SparkCommonSnapshotTesting
 @_spi(SI_SPI) import SparkCommonTesting
-@testable import SparkComponent___COMPONENT_NAME___
+@testable import SparkComponentCircularMeter
 import SparkTheming
 import SparkTheme
 
-final class Spark___COMPONENT_NAME___SnapshotTests: SwiftUIComponentSnapshotTestCase {
+final class SparkCircularMeterSnapshotTests: SwiftUIComponentSnapshotTestCase {
 
     // MARK: - Properties
 
@@ -25,18 +26,18 @@ final class Spark___COMPONENT_NAME___SnapshotTests: SwiftUIComponentSnapshotTest
     // MARK: - Tests
 
     func test() {
-        let scenarios = ___COMPONENT_NAME___ScenarioSnapshotTests.allCases
+        let scenarios = CircularMeterScenarioSnapshotTests.allCases
         self.loadScenarios(scenarios)
     }
 
     // MARK: - Scenarios
 
-    private func loadScenarios(_ scenarios: [___COMPONENT_NAME___ScenarioSnapshotTests]) {
+    private func loadScenarios(_ scenarios: [CircularMeterScenarioSnapshotTests]) {
         for scenario in scenarios {
             let configurations = scenario.configuration()
 
             for configuration in configurations {
-                let view = Spark___COMPONENT_NAME___()
+                let view = SparkCircularMeter()
                     .sparkTheme(self.theme)
                     .padding(20)
                     .background(.background)
@@ -54,3 +55,4 @@ final class Spark___COMPONENT_NAME___SnapshotTests: SwiftUIComponentSnapshotTest
         }
     }
 }
+*/
