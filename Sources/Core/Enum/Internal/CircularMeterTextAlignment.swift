@@ -22,7 +22,7 @@ enum CircularMeterTextAlignment {
     /// The default case. Equals to **.leading**.
     static let `default`: Self = .leading
 
-    public var swiftUIAlignement: HorizontalAlignment {
+    var swiftUIAlignement: HorizontalAlignment {
         switch self {
         case .leading: .leading
         case .center: .center

@@ -13,7 +13,153 @@ import Testing
 @Suite("Double Formatted Value Extension Tests")
 struct DoubleFormattedValueExtensionTests {
 
-    // MARK: - Tests
+    // MARK: - ValidatedValue Tests
+
+    @Test("Validate value returns same value when in valid range")
+    func validatedValueReturnsSameValueWhenInValidRange() {
+        // GIVEN
+        let value: Double = 0.70
+
+        // WHEN
+        let result = value.validatedValue
+
+        // THEN
+        #expect(result == 0.70)
+    }
+
+    @Test("Validate value clamps negative value to zero")
+    func validatedValueClampsNegativeValueToZero() {
+        // GIVEN
+        let value: Double = -0.5
+
+        // WHEN
+        let result = value.validatedValue
+
+        // THEN
+        #expect(result == 0.0)
+    }
+
+    @Test("Validate value clamps value above one to one")
+    func validatedValueClampsValueAboveOneToOne() {
+        // GIVEN
+        let value: Double = 1.5
+
+        // WHEN
+        let result = value.validatedValue
+
+        // THEN
+        #expect(result == 1.0)
+    }
+
+    @Test("Validate value returns zero for zero")
+    func validatedValueReturnsZeroForZero() {
+        // GIVEN
+        let value: Double = 0.0
+
+        // WHEN
+        let result = value.validatedValue
+
+        // THEN
+        #expect(result == 0.0)
+    }
+
+    @Test("Validate value returns one for one")
+    func validatedValueReturnsOneForOne() {
+        // GIVEN
+        let value: Double = 1.0
+
+        // WHEN
+        let result = value.validatedValue
+
+        // THEN
+        #expect(result == 1.0)
+    }
+
+    @Test("Validate value with very small negative value")
+    func validatedValueWithVerySmallNegativeValue() {
+        // GIVEN
+        let value: Double = -0.01
+
+        // WHEN
+        let result = value.validatedValue
+
+        // THEN
+        #expect(result == 0.0)
+    }
+
+    @Test("Validate value with very large positive value")
+    func validatedValueWithVeryLargePositiveValue() {
+        // GIVEN
+        let value: Double = 100.0
+
+        // WHEN
+        let result = value.validatedValue
+
+        // THEN
+        #expect(result == 1.0)
+    }
+
+    @Test("Validate value with value slightly above one")
+    func validatedValueWithValueSlightlyAboveOne() {
+        // GIVEN
+        let value: Double = 1.01
+
+        // WHEN
+        let result = value.validatedValue
+
+        // THEN
+        #expect(result == 1.0)
+    }
+
+    @Test("Validate value with value slightly below zero")
+    func validatedValueWithValueSlightlyBelowZero() {
+        // GIVEN
+        let value: Double = -0.001
+
+        // WHEN
+        let result = value.validatedValue
+
+        // THEN
+        #expect(result == 0.0)
+    }
+
+    @Test("Validate value with mid range value")
+    func validatedValueWithMidRangeValue() {
+        // GIVEN
+        let value: Double = 0.5
+
+        // WHEN
+        let result = value.validatedValue
+
+        // THEN
+        #expect(result == 0.5)
+    }
+
+    @Test("Validate value with small valid value")
+    func validatedValueWithSmallValidValue() {
+        // GIVEN
+        let value: Double = 0.01
+
+        // WHEN
+        let result = value.validatedValue
+
+        // THEN
+        #expect(result == 0.01)
+    }
+
+    @Test("Validate value with near maximum valid value")
+    func validatedValueWithNearMaximumValidValue() {
+        // GIVEN
+        let value: Double = 0.99
+
+        // WHEN
+        let result = value.validatedValue
+
+        // THEN
+        #expect(result == 0.99)
+    }
+
+    // MARK: ToPercentageString Tests
 
     @Test("To percentage string with integer value")
     func toPercentageStringWithIntegerValue() {
@@ -106,7 +252,6 @@ struct DoubleFormattedValueExtensionTests {
 
         // THEN
         #expect(!result.isEmpty)
-        #expect(result.count > 0)
     }
 
     @Test("To percentage string with small value")

@@ -9,8 +9,6 @@
 import SwiftUI
 import SparkTheming
 
-// TODO: Tests
-
 // sourcery: AutoPublisherTest, AutoViewModelStub
 final class CircularMeterViewModel: ObservableObject {
 

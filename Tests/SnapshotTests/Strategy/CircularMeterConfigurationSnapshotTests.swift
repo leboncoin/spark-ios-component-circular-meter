@@ -17,8 +17,13 @@ struct CircularMeterConfigurationSnapshotTests {
 
     let scenario: CircularMeterScenarioSnapshotTests
 
+    var value: Double = 0.5
     var intent: CircularMeterIntent = .default
-    // TODO: Add Others
+    var size: CircularMeterSize = .default
+    var displayType: CircularMeterDisplayType = .default
+    var labelsType: CircularMeterContentType = .default
+    var isText: Bool = true
+    var isContent: Bool = true
 
     var modes: [ComponentSnapshotTestMode] = ComponentSnapshotTestConstants.Modes.default
     var sizes: [UIContentSizeCategory] = ComponentSnapshotTestConstants.Sizes.default
@@ -32,10 +37,14 @@ struct CircularMeterConfigurationSnapshotTests {
 
         return [
             "\(self.intent)" + "Intent",
-            // TODO: Add Others
+            "\(self.value)" + "Value",
+            "\(self.size)" + "Size",
+            "\(self.displayType)" + "DisplayType",
+            self.isText ? self.labelsType.name(for: "title") : nil,
+            self.isContent ? self.labelsType.name(for: "content") : nil
         ]
             .compactMap { $0 }
-            .joined(separator: "-")
+            .joined(separator: "_")
     }
 
     var testName: String {

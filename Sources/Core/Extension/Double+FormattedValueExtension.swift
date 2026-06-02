@@ -10,6 +10,34 @@ import Foundation
 
 extension Double {
 
+    // MARK: - Properties
+
+    /// Validates and clamps the Double value to be within the valid range [0.0, 1.0].
+    ///
+    /// This property ensures the value is suitable for use in a circular meter component,
+    /// where values represent progress from 0% (0.0) to 100% (1.0).
+    ///
+    /// - Returns: A clamped value between 0.0 and 1.0 inclusive.
+    ///   - If the value is negative, returns 0.0
+    ///   - If the value is greater than 1.0, returns 1.0
+    ///   - Otherwise, returns the original value
+    ///
+    /// ## Example of usage
+    ///
+    /// ```swift
+    /// let normalValue: Double = 0.70
+    /// let validated1 = normalValue.validatedValue // 0.70
+    ///
+    /// let negativeValue: Double = -0.5
+    /// let validated2 = negativeValue.validatedValue // 0.0
+    ///
+    /// let excessiveValue: Double = 1.5
+    /// let validated3 = excessiveValue.validatedValue // 1.0
+    /// ```
+    var validatedValue: Self {
+        return min(max(0, self), 1)
+    }
+
     // MARK: - Methods
 
     /// Converts the Double value to a percentage string.

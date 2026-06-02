@@ -35,6 +35,11 @@ public extension SparkCircularMeter {
     ///     }
     /// }
     /// ```
+    ///
+    /// ## Rendering
+    ///
+    /// ![Image display](circularmeter_image.png)
+    ///
     init(
         value: Double,
         icon: Image

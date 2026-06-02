@@ -36,6 +36,11 @@ public extension SparkCircularMeter {
     ///     }
     /// }
     /// ```
+    ///
+    /// ## Rendering
+    ///
+    /// ![Image display](circularmeter_text.png)
+    ///
     init(
         value: Double,
         @ViewBuilder valueLabel: @escaping () -> ValueLabel
@@ -80,6 +85,11 @@ public extension SparkCircularMeter {
     ///     }
     /// }
     /// ```
+    ///
+    /// ## Rendering
+    ///
+    /// ![Image display](circularmeter_text.png)
+    ///
     init(
         value: Double,
         @ViewBuilder valueLabel: @escaping () -> ValueLabel,
@@ -122,6 +132,11 @@ public extension SparkCircularMeter {
     ///     }
     /// }
     /// ```
+    ///
+    /// ## Rendering
+    ///
+    /// ![Image display](circularmeter_icon.png)
+    ///
     init(
         value: Double,
         icon: Image,

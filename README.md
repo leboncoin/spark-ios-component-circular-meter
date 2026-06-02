@@ -8,7 +8,7 @@ You can also see all of our Spark iOS repositories on [Github](https://github.co
 
 ## Specifications
 
-The circularmeter specifications is visible on [Zeroheight](TODO).
+The circularmeter specifications is visible on [Zeroheight](https://zeroheight.com/1186e1705/p/35093b-circular-meter).
 
 ![Figma anatomy](https://github.com/leboncoin/spark-ios-component-circular-meter/blob/main/.github/assets/anatomy.png)
 

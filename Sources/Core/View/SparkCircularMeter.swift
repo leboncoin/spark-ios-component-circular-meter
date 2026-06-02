@@ -10,8 +10,6 @@ import SwiftUI
 import SparkTheming
 @_spi(SI_SPI) import SparkCommon
 
-// TODO: Animate the value ?
-
 /// The circular meter displays a circular progress indicator with optional value, label, icon, or image.
 ///
 /// ## Context
@@ -117,7 +115,17 @@ import SparkTheming
 ///
 /// ## Rendering
 ///
-/// ![Circular meter rendering.](component.png)
+/// ### Sizes
+///
+/// | Small | Medium | Large | Extra Large |
+/// |:---:|:---:|:---:|:---:|
+/// | ![Small size](circularmeter_small.png) | ![Medium size](circularmeter_medium.png) | ![Large size](circularmeter_large.png) | ![Extra large size](circularmeter_xLarge.png) |
+///
+/// ### Display Types
+///
+/// | Value | Text | Icon | Image |
+/// |:---:|:---:|:---:|:---:|
+/// | ![Value](circularmeter_value.png) | ![Text display](circularmeter_text.png) | ![Icon display](circularmeter_icon.png) | ![Image display](circularmeter_image.png) |
 ///
 public struct SparkCircularMeter<ValueLabel, ContentLabel>: View where ValueLabel: View, ContentLabel: View {
 
@@ -157,6 +165,10 @@ public struct SparkCircularMeter<ValueLabel, ContentLabel>: View where ValueLabe
     ///     }
     /// }
     /// ```
+    ///
+    /// ## Rendering
+    ///
+    /// ![Image display](circularmeter_value.png)
     public init(
         value: Double
     ) where ValueLabel == Text, ContentLabel == EmptyView {
@@ -164,7 +176,7 @@ public struct SparkCircularMeter<ValueLabel, ContentLabel>: View where ValueLabe
             value: value,
             icon: nil,
             image: nil,
-            valueLabel: { Text(value.toPercentageString()) },
+            valueLabel: { Text(value.validatedValue.toPercentageString()) },
             contentLabel: { EmptyView() }
         )
     }
@@ -178,7 +190,7 @@ public struct SparkCircularMeter<ValueLabel, ContentLabel>: View where ValueLabe
         @ViewBuilder valueLabel: @escaping () -> ValueLabel,
         @ViewBuilder contentLabel: @escaping () -> ContentLabel
     ) {
-        self.value = value
+        self.value = value.validatedValue
         self.icon = icon
         self.image = image
         self.valueLabel = valueLabel
@@ -214,6 +226,10 @@ public struct SparkCircularMeter<ValueLabel, ContentLabel>: View where ValueLabe
                         )
                     )
                     .rotationEffect(.degrees(-90))
+                    .optionalAnimation(
+                        .easeOut(duration: CircularMeterConstants.Animation.duration),
+                        value: self.value
+                    )
 
                 // Inside content
                 if self.viewModel.isInsideContent {
@@ -263,7 +279,7 @@ public struct SparkCircularMeter<ValueLabel, ContentLabel>: View where ValueLabe
         }
         .accessibilityElement(children: .combine)
         .accessibilityIdentifier(CircularMeterAccessibilityIdentifier.view)
-        .accessibilityValue(Text("\(Int(self.value * 100))%")) // TODO: Manage in String
+        .accessibilityValue(Text(self.value.toPercentageString()))
         .onAppear {
             self.viewModel.setup(
                 theme: self.theme.value,
