@@ -5,18 +5,18 @@ import PackageDescription
 
 // swiftlint:disable all
 let package = Package(
-    name: "SparkComponent___COMPONENT_NAME___",
+    name: "SparkComponentCircularMeter",
     platforms: [
         .iOS(.v16)
     ],
     products: [
         .library(
-            name: "SparkComponent___COMPONENT_NAME___",
-            targets: ["SparkComponent___COMPONENT_NAME___"]
+            name: "SparkComponentCircularMeter",
+            targets: ["SparkComponentCircularMeter"]
         ),
         .library(
-            name: "SparkComponent___COMPONENT_NAME___Testing",
-            targets: ["SparkComponent___COMPONENT_NAME___Testing"]
+            name: "SparkComponentCircularMeterTesting",
+            targets: ["SparkComponentCircularMeterTesting"]
         )
     ],
     dependencies: [
@@ -33,7 +33,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "SparkComponent___COMPONENT_NAME___",
+            name: "SparkComponentCircularMeter",
             dependencies: [
                 .product(
                     name: "SparkCommon",
@@ -47,9 +47,9 @@ let package = Package(
             path: "Sources/Core"
         ),
         .target(
-            name: "SparkComponent___COMPONENT_NAME___Testing",
+            name: "SparkComponentCircularMeterTesting",
             dependencies: [
-                "SparkComponent___COMPONENT_NAME___",
+                "SparkComponentCircularMeter",
                 .product(
                     name: "SparkCommon",
                     package: "spark-ios-common"
@@ -70,10 +70,10 @@ let package = Package(
             path: "Sources/Testing"
         ),
         .testTarget(
-            name: "SparkComponent___COMPONENT_NAME___UnitTests",
+            name: "SparkComponentCircularMeterUnitTests",
             dependencies: [
-                "SparkComponent___COMPONENT_NAME___",
-                "SparkComponent___COMPONENT_NAME___Testing",
+                "SparkComponentCircularMeter",
+                "SparkComponentCircularMeterTesting",
                 .product(
                     name: "SparkCommonTesting",
                     package: "spark-ios-common"
@@ -86,10 +86,10 @@ let package = Package(
             path: "Tests/UnitTests"
         ),
         .testTarget(
-            name: "SparkComponent___COMPONENT_NAME___SnapshotTests",
+            name: "SparkComponentCircularMeterSnapshotTests",
             dependencies: [
-                "SparkComponent___COMPONENT_NAME___",
-                "SparkComponent___COMPONENT_NAME___Testing",
+                "SparkComponentCircularMeter",
+                "SparkComponentCircularMeterTesting",
                 .product(
                     name: "SparkCommonSnapshotTesting",
                     package: "spark-ios-common"
