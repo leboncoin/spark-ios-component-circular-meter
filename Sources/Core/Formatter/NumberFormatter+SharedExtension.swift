@@ -14,6 +14,8 @@ extension NumberFormatter {
         let formatter = NumberFormatter()
         formatter.numberStyle = .percent
         formatter.maximumFractionDigits = 0
+        formatter.positiveFormat = "#%"
+        formatter.negativeFormat = "-#%"
         return formatter
     }()
 }
